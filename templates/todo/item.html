@@ -1,0 +1,6 @@
+
+
+<div class="uk-flex uk-flex-between {{ todo.status }}">
+    <p hx-swap="outerHTML" hx-get="/edit/{{ todo.id }}"><span uk-icon="file-edit"></span> {{ todo.content }}</p>
+    <button class="uk-icon-button" uk-icon="icon: close" hx-delete="/delete/{{ todo.id }}"></button>
+</div>
