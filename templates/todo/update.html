@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+  <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-margin-top">
+    <form id="todoForm" class="uk-form-horizontal">
+      <div class="uk-margin uk-inline uk-width-1-1" uk-margin>
+        <input id="contentInput" autocomplete="off" class="uk-input" type="text" name="content" value="">
+        <select name="status" id="status">
+            <optgroup label="Select status of todo">
+                <option value="Completed">Completed</option>
+                <option value="InProgress">In Progress</option>
+                <option value="NotYet">Not Yet</option>
+            </optgroup>
+        </select>
+        <input type="submit" value="submit">
+      </div>
+    </form>
+  </div>
+{% endblock %}
+

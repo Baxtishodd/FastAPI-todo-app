@@ -11,11 +11,13 @@
 
 {% block content %}
   <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-margin-top">
-    <form id="todoForm" class="uk-form-horizontal" hx-post="/add" hx-swap="beforeend" hx-target="#todoItems" hx-trigger="submit">
+    <form class="uk-form-horizontal" hx-post="/add" hx-swap="beforeend" hx-target="#todoItems" hx-trigger="submit"
+          id="todoForm">
       <div class="uk-margin uk-inline uk-width-1-1" uk-margin>
 <!--        <span class="uk-form-icon" uk-icon="icon: plus"></span>-->
         <input id="contentInput" autocomplete="off" class="uk-input" type="text" name="content" placeholder="Write your task here...">
-        <select name="status" id="status">
+
+          <select name="status" id="status">
             <optgroup label="Select status of todo">
                 <option value="Completed">Completed</option>
                 <option value="InProgress">In Progress</option>
@@ -31,6 +33,7 @@
       {% endfor %}
     </ul>
   </div>
+
 {% endblock %}
 
 {% block javascript %}
@@ -40,3 +43,5 @@
     });
   </script>
 {% endblock %}
+
+

@@ -1,0 +1,16 @@
+
+
+
+<li class="uk-flex uk-flex-between" hx-swap="outerHTML" hx-target="this">
+    <form id="todoForm" class="uk-form-horizontal uk-width-1-1" hx-put="/edit/{{ todo.id }}" hx-trigger="submit">
+        <input autocomplete="off" autofocus class="uk-input" type="text" name="content" value="{{ todo.content }}">
+        <select name="status" id="status">
+            <optgroup label="Select status of todo">
+                <option value="Completed">Completed</option>
+                <option value="InProgress">In Progress</option>
+                <option value="NotYet">Not Yet</option>
+            </optgroup>
+        </select>
+        <submit></submit>
+    </form>
+</li>
