@@ -55,18 +55,18 @@ def post_add(request: Request, content: str = Form(...), status: str = Form(...)
     return templates.TemplateResponse("todo/item.html", context)
 
 
-@app.get("/edit/{item_id}", response_class=HTMLResponse)
+@app.get("/update/{item_id}", response_class=HTMLResponse)
 def get_edit(request: Request, item_id: int, db: Session = Depends(get_db)):
     todo = get_todo(db, item_id)
     context = {"request": request, "todo": todo}
-    return templates.TemplateResponse("todo/form.html", context)
+    return templates.TemplateResponse("todo/update.html", context)
 
 
-@app.put("/edit/{item_id}", response_class=HTMLResponse)
+@app.put("/update/{item_id}", response_class=HTMLResponse)
 def put_edit(request: Request, item_id: int, content: str = Form(...), status: str = Form(...), db: Session = Depends(get_db)):
     todo = update_todo(db, item_id, content, status)
     context = {"request": request, "todo": todo}
-    return templates.TemplateResponse("todo/item.html", context)
+    return templates.TemplateResponse("todo/update.html", context)
 
 
 @app.delete("/delete/{item_id}", response_class=Response)
